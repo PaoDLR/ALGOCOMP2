@@ -22,6 +22,10 @@ public class ALGOCOMP2 {
     public static void analyze (String input) {   
 
         //put your code here and the print statements for the output.
+        
+        //make everything uppercase
+        input = input.toUpperCase();
+        
         int[] ctr = new int[255];
 
         int strLength = input.length();
