@@ -5,6 +5,9 @@
  */
 package algocomp2;
 
+//imports
+import java.util.Scanner;
+
 /**
  *
  * @author Paolo Delos Reyes & Miguel Rivera
@@ -18,7 +21,32 @@ public class ALGOCOMP2 {
     //item number 1
     public static void analyze (String input) {   
 
-    //put your code here and the print statements for the output.
+        //put your code here and the print statements for the output.
+        int[] ctr = new int[255];
+
+        int strLength = input.length();
+
+        for(int i = 0; i < strLength; i++){
+            ctr[input.charAt(i)]++;
+        }
+        
+        char[] ch = new char[input.length()];
+        
+        for(int i = 0; i < strLength; i++){
+            ch[i] = input.charAt(i);
+            
+            int found = 0;
+            
+            for(int j = 0; j <= i; j++){
+                if(input.charAt(i) == ch[j]){
+                    found++;
+                }
+            }
+            
+            if(found == 1){
+                System.out.println("" + input.charAt(i) + " " + ctr[input.charAt(i)]);
+            }
+        }
         
     }
     
@@ -45,6 +73,8 @@ public class ALGOCOMP2 {
     
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        analyze("Hello! My name is Paolo!");
     }
     
 }
