@@ -26,6 +26,9 @@ public class ALGOCOMP2 {
         //make everything uppercase
         input = input.toUpperCase();
         
+        //removes all except alphabets
+        input = input.replaceAll("[^a-zA-Z-]", "");
+        
         int[] ctr = new int[255];
 
         int strLength = input.length();
